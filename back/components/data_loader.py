@@ -1,4 +1,5 @@
 import csv
+from preprocess import preprocess_poem
 
 def load_poems_from_csv(file_path):
     preprocessed_poems_data = []

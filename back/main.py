@@ -1,16 +1,14 @@
 import numpy as np
 from sklearn.model_selection import train_test_split
-from preprocess import preprocess_poem
-from data_loader import load_poems_from_csv
-from model import build_and_train_model
+from components.preprocess import preprocess_poem
+from components.data_loader import load_poems_from_csv
+from components.model import build_and_train_model
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.utils import to_categorical
 
-# Load poems from CSV
 preprocessed_poems_data = load_poems_from_csv('poems.csv')
 
-# Get all lines of preprocessed poems
 all_lines = [line for poem in preprocessed_poems_data for line in poem[2]]
 
 # Initialize and fit Tokenizer
